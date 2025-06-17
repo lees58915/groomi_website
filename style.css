@@ -90,6 +90,7 @@ header {
 /* Hero section styles */
 .hero-section {
     position: absolute;
+    font-family: "SF Pro Display";
     height: 100vh; /* Ensures the hero section fills the viewport */
     overflow: hidden; /* Ensures no overflow */
     display: flex;
