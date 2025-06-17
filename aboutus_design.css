@@ -1,0 +1,398 @@
+@import url('https://static.toss.im/tps/main.css');
+@import url('https://static.toss.im/tps/others.css');
+
+* {
+  font-family: 'Toss Product Sans';
+}
+
+/* Regular weight */
+@font-face {
+    font-family: 'SF Pro Display';
+    src: url('SF-Pro-Display-Regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Light weight */
+@font-face {
+    font-family: 'SF Pro Display Light';
+    src: url('SF-Pro-Display-Light.otf') format('opentype');
+    font-weight: 300; /* Light weight */
+    font-style: normal;
+}
+
+/* Medium weight */
+@font-face {
+    font-family: 'SF Pro Display Medium';
+    src: url('SF-Pro-Display-Medium.otf') format('opentype');
+    font-weight: 500; /* Medium weight */
+    font-style: normal;
+}
+
+/* Semibold weight (rounded) */
+@font-face {
+    font-family: 'SF Pro Rounded Semibold';
+    src: url('SF-Pro-Rounded-Semibold.otf') format('opentype');
+    font-weight: 600; /* Semibold weight */
+    font-style: normal;
+}
+
+/* Black weight */
+@font-face {
+    font-family: 'SF Pro Display Black';
+    src: url('SF-Pro-Display-Black.otf') format('opentype');
+    font-weight: 900; /* Black weight */
+    font-style: normal;
+}
+
+/* Regular weight */
+@font-face {
+    font-family: 'Moneygraphy Rounded';
+    src: url('Moneygraphy-Rounded.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Body * Header */
+/* --------------------------------------------------------------------------- */
+
+/* Resetting some default styles */
+body, ul, li, a {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    font-family: Arial, sans-serif;
+}
+
+/* Add some space between the body content and the edges of the screen */
+body {
+    padding: 0; /* 0 padding on both sides */
+    font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    overflow-x: hidden;
+}
+
+/* Styling for the header and navbar */
+header {
+    position: sticky; /* Fixes the navbar at the top */
+    top: 0;           /* Ensures it stays at the top of the screen */
+    left: 0;          /* Align it to the left */
+    width: 100%;      /* Make the navbar span the full width */
+    z-index: 1000;    /* Ensures it stays above other content */
+    background-color: rgb(0, 0, 0); /* Semi-transparent background */
+    /* border-bottom: 2px solid #007bff; /* Border for separation */
+    padding: 1px 0;  /* Adjust padding as needed */
+}
+
+/* Hero */
+/* --------------------------------------------------------------------------- */
+
+/* Hero section styles */
+.hero-section {
+    position: absolute;
+    height: 100vh; /* Ensures the hero section fills the viewport */
+    overflow: hidden; /* Ensures no overflow */
+    display: flex;
+    align-items: flex-start; /* Align content at the top */
+    justify-content: center;
+    background-image: url('startup_meeting.jpg');
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    padding: 0 50px; /* Add padding for smaller screens */
+    margin-top: 0px; /* Adds margin to avoid overlap with navbar */
+}
+
+/* Make sure the hero images scroll within the viewport */
+.hero-images {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 0px; /* Add space between the images */
+    max-width: 50%;
+    justify-content: flex-start;
+    margin-top: 30px; /* Adjust spacing as needed */
+    z-index: 2;
+}
+
+.hero-images img {
+    width: 60%;  /* Make the image responsive */
+    height: auto;  /* Maintain the aspect ratio */
+    object-fit: contain;  /* Ensure the image doesn't get distorted */
+    max-width: 300px;
+    transition: transform 0.3s ease;
+}
+
+/* Optional: Add hover effect for images */
+.hero-images img:hover {
+    transform: scale(1.1); /* Slight zoom effect on hover */
+}
+
+.hero-content {
+    position: relative;
+    text-align: center;
+    align-items: center;
+    max-width: 80%;
+    padding-right: 20px;
+    margin-top: 30px; /* Adjust margin as needed */
+    z-index: 2;
+}
+
+/* Add a 30% transparent overlay on top of the image */
+.hero-section::before {
+    content: '';  /* Empty content for the overlay */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgb(0, 0, 0.05) 1%, rgba(0, 0, 0, 0.2) 40%);  /* Black with 30% transparency */
+    backdrop-filter: blur(5px);  /* Apply blur effect */
+    z-index: 1;  /* Make sure overlay is below the content */
+}
+
+
+/* Hero content on the left */
+.hero-content {
+    font-family: 'SF Pro Display';
+    position: relative;
+    text-align: center;
+    max-width: 50%;
+    margin-top: 10%;
+    z-index: 2;
+}
+
+.hero-content h1 {
+    font-size: 3.0rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    margin-bottom: 30px;
+    color: #000000;
+}
+
+/* Apply a parallax effect to hero content and images */
+.hero-content, .hero-images, .button-group {
+    position: relative;
+    z-index: 2;
+    transform: translateY(0);
+    will-change: transform; /* Optimize performance */
+    transition: transform 0.1s linear; /* Smooth movement */
+}
+
+/* For the parallax background */
+.hero-section {
+    position: relative;
+    height: 100vh;
+    background-image: url('startup_meeting.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Navbar */
+/* --------------------------------------------------------------------------- */
+
+/* Navbar container */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px; /* Limits the width of the navbar */
+    margin: 0 auto; /* Centers the navbar horizontally */
+    padding: 5px 0;
+    width: 100%; /* Ensures the navbar fills the available width */
+}
+
+.logo img{
+    width: 100px;
+    height: auto;
+    display: block;
+}
+
+/* Navigation links */
+.nav-links {
+    display: flex;
+    gap: 5px;
+}
+
+/* Individual navigation links */
+.nav-links a {
+    font-size: 15px;
+    font-family: "SF Pro Rounded";
+    color: white;
+    padding: 10px 10px;
+    border-radius: 8px;
+    transition: all 0.2s ease-in-out;
+}
+
+/* Hover effects */
+.nav-links a:hover {
+    background-color: #f0f0f0;
+    color: #000000;
+}
+
+/* Hover effects for both buttons */
+.get-started:hover, .login:hover {
+    background-color: #0064FF;
+}
+
+
+/* Team Mission */
+/* --------------------------------------------------------------------------- */
+
+.wallpaper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('team_mission.jpg') center center / cover no-repeat;
+  pointer-events: none;
+  z-index: -1;
+  padding: 20px -10%;;
+}
+
+.mission {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 20px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.mission-block {
+  max-width: 600px;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 40px;
+  border-radius: 12px;
+  text-align: center;
+  font-size: 20px;
+  line-height: 1.8;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Style for the heading inside the block */
+.mission-block h3 {
+  font-size: 32px;
+  margin-top: 0;
+  margin-bottom: 20px;
+  color: #dfcdcd;
+}
+
+.mission-block p {
+  font-size: 1.2rem;         /* Make the text a bit larger */
+  line-height: 1.6;          /* Improve readability */
+  color: #fff;               /* White text (adjust if needed) */
+  margin-top: 1rem;
+  max-width: 800px;          /* Prevent overly long lines */
+  text-align: center;        /* Center the text */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Just to allow scrolling for the effect */
+.spacer {
+  height: 70vh;
+}
+
+
+
+
+
+/* Centered-text-Section */
+/* --------------------------------------------------------------------------- */
+
+.centered-text-section {
+    position: relative;
+    background-image: url('vet_wallpaper.png'); /* Set the image as background */
+    background-size: cover; /* Ensure the image covers the entire section */
+    background-position: center; /* Center the background image */
+    height: 100vh; /* Set the height to cover the entire viewport */
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Center content vertically and horizontally */
+    margin-top: 260px; /* Add space on top */
+    margin-left: -8%;
+    margin-right: -8%;
+}
+
+
+.text_overwrite {
+    text-align: center; /* Center the text horizontally */
+    color: white; /* Set text color for better visibility */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.text_overwrite h1 {
+    font-family: 'SF Pro Display';
+    color: white;
+    font-size: 7em;
+    margin-bottom: 10px;
+}
+
+
+/* Company Information */
+/* --------------------------------------------------------------------------- */
+/* Just to allow scrolling for the effect */
+.spacer {
+  height: 70vh;
+}
+
+.company-info {
+    background-color: rgb(2, 2, 2);
+    font-family: 'SF Pro Display';
+    text-align: left;
+
+    width: 100%;
+    margin-left: -8%;
+    margin-right: -8%;
+
+    padding-left: 23%;
+    padding-right: 23%;
+    padding-top: 5%;
+    padding-bottom: 15%;
+}
+
+.company-info h2 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    color: #fdfdfd;
+}
+
+.company-info ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.company-info li {
+    font-size: 1em;
+    margin: 10px 0;
+    color: #fdfdfd;
+}
+
+.company-info a {
+    color: #0064FF;
+    text-decoration: none;
+}
+
+.company-info a:hover {
+    text-decoration: underline;
+}
+
+.company-info strong {
+    font-weight: bold;
+    color: #fcfcfc; 
+}
+
