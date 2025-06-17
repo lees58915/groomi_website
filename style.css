@@ -1,0 +1,845 @@
+@import url('https://static.toss.im/tps/main.css');
+@import url('https://static.toss.im/tps/others.css');
+
+* {
+  font-family: 'Toss Product Sans';
+}
+
+/* Regular weight */
+@font-face {
+    font-family: 'SF Pro Display';
+    src: url('SF-Pro-Display-Regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Light weight */
+@font-face {
+    font-family: 'SF Pro Display Light';
+    src: url('SF-Pro-Display-Light.otf') format('opentype');
+    font-weight: 300; /* Light weight */
+    font-style: normal;
+}
+
+/* Medium weight */
+@font-face {
+    font-family: 'SF Pro Display Medium';
+    src: url('SF-Pro-Display-Medium.otf') format('opentype');
+    font-weight: 500; /* Medium weight */
+    font-style: normal;
+}
+
+/* Semibold weight (rounded) */
+@font-face {
+    font-family: 'SF Pro Rounded Semibold';
+    src: url('SF-Pro-Rounded-Semibold.otf') format('opentype');
+    font-weight: 600; /* Semibold weight */
+    font-style: normal;
+}
+
+/* Black weight */
+@font-face {
+    font-family: 'SF Pro Display Black';
+    src: url('SF-Pro-Display-Black.otf') format('opentype');
+    font-weight: 900; /* Black weight */
+    font-style: normal;
+}
+
+/* Regular weight */
+@font-face {
+    font-family: 'Moneygraphy Rounded';
+    src: url('Moneygraphy-Rounded.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Body * Header */
+/* --------------------------------------------------------------------------- */
+
+/* Resetting some default styles */
+body, ul, li, a {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    font-family: Arial, sans-serif;
+}
+
+/* Add some space between the body content and the edges of the screen */
+body {
+    padding: 0; /* 0 padding on both sides */
+    font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    overflow-x: hidden;
+}
+
+/* Styling for the header and navbar */
+header {
+    position: sticky; /* Fixes the navbar at the top */
+    top: 0;           /* Ensures it stays at the top of the screen */
+    left: 0;          /* Align it to the left */
+    width: 100%;      /* Make the navbar span the full width */
+    z-index: 1000;    /* Ensures it stays above other content */
+    background-color: rgba(255, 255, 255); /* Semi-transparent background */
+    /* border-bottom: 2px solid #007bff; /* Border for separation */
+    padding: 1px 0;  /* Adjust padding as needed */
+}
+
+/* Hero */
+/* --------------------------------------------------------------------------- */
+
+/* Hero section styles */
+.hero-section {
+    position: absolute;
+    height: 100vh; /* Ensures the hero section fills the viewport */
+    overflow: hidden; /* Ensures no overflow */
+    display: flex;
+    align-items: flex-start; /* Align content at the top */
+    justify-content: center;
+    background-image: url('website_wallpaper.jpg');
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    color: rgb(12, 0, 0);
+    padding: 0 50px; /* Add padding for smaller screens */
+    margin-top: 0px; /* Adds margin to avoid overlap with navbar */
+}
+
+/* Make sure the hero images scroll within the viewport */
+.hero-images {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 20px; /* Add space between the images */
+    max-width: 50%;
+    justify-content: flex-start;
+    margin-top: 30px; /* Adjust spacing as needed */
+    z-index: 2;
+}
+
+
+.hero-images img {
+    width: 60%;  /* Make the image responsive */
+    height: auto;  /* Maintain the aspect ratio */
+    object-fit: contain;  /* Ensure the image doesn't get distorted */
+    max-width: 300px;
+    transition: transform 0.3s ease;
+}
+
+/* Optional: Add hover effect for images */
+.hero-images img:hover {
+    transform: scale(1.1); /* Slight zoom effect on hover */
+}
+
+.hero-content {
+    position: relative;
+    text-align: center;
+    max-width: 80%;
+    padding-right: 20px;
+    margin-top: 20px; /* Adjust margin as needed */
+    z-index: 2;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    margin-bottom: 30px;
+    color: #000000;
+}
+
+/* Hero section styles */
+.hero-section {
+    position: relative;
+    height: 100vh; /* Full viewport height */
+    /* overflow: hidden; */
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    background-image: url(website_wallpaper.jpg);
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    color: rgb(12, 0, 0);
+    padding: 0 50px; /* Add padding for smaller screens */
+    padding-top: 80px; /* Adjust this based on your navbar height */
+    margin-top: 0; /* Remove margin to prevent overlap with navbar */
+}
+
+
+/* Add a 30% transparent overlay on top of the image */
+.hero-section::before {
+    content: '';  /* Empty content for the overlay */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 1%, rgba(255, 255, 255, 0.6) 20%);  /* Black with 30% transparency */    backdrop-filter: blur(5px);  /* Apply blur effect */
+    z-index: 1;  /* Make sure overlay is below the content */
+}
+
+
+/* Hero content on the left */
+.hero-content {
+    font-family: 'SF Pro Display';
+    position: relative;
+    text-align: center;
+    max-width: 50%;
+    margin-top: 70px;
+    z-index: 2;
+}
+
+.hero-content h1 {
+    font-size: 2.8rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    margin-bottom: 30px;
+    color: #000000;
+}
+
+/* Navbar */
+/* --------------------------------------------------------------------------- */
+
+/* Navbar container */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px; /* Limits the width of the navbar */
+    margin: 0 auto; /* Centers the navbar horizontally */
+    padding: 5px 0;
+    width: 100%; /* Ensures the navbar fills the available width */
+}
+
+.logo img{
+    width: 100px;
+    height: auto;
+    display: block;
+}
+
+/* Navigation links */
+.nav-links {
+    display: flex;
+    gap: 5px;
+}
+
+/* Individual navigation links */
+.nav-links a {
+    font-size: 15px;
+    font-family: "SF Pro Rounded";
+    color: #333333;
+    padding: 10px 10px;
+    border-radius: 8px;
+    transition: all 0.2s ease-in-out;
+}
+
+/* Hover effects */
+.nav-links a:hover {
+    background-color: #f0f0f0;
+    color: #000000;
+}
+
+/* Hover effects for both buttons */
+.get-started:hover, .login:hover {
+    background-color: #0064FF;
+}
+
+
+/* Button */
+/* --------------------------------------------------------------------------- */
+
+/* Button group */
+.button-group {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 25px;
+    border-radius: 15px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+/* App Store button */
+.button.app-store {
+    background-color: rgb(0, 0, 0);
+    color: white;
+    font-weight: 300;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+}
+
+.button.app-store:hover {
+    background-color: #0064FF;
+    color: white;
+}
+
+/* Google Play button */
+.button.google-play {
+    background-color: rgb(0, 0, 0);
+    color: white;
+    font-weight: 300; /* Lighter font weight for thinner text */
+    font-size: 1rem;
+    display: flex;
+    align-items: center;  /* Center icon and text vertically */
+    padding: 10px 20px;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+}
+
+.button.google-play:hover {
+    background-color: #0064FF;
+    color: white
+}
+
+/* Icon inside the buttons */
+.button.app-store i, .button.google-play i {
+    margin-right: 10px; /* Space between icon and text */
+    font-size: 1.5rem;  /* Adjust the icon size */
+}
+
+
+/* Apply a parallax effect to hero content and images */
+.hero-content, .hero-images, .button-group {
+    position: relative;
+    z-index: 2;
+    transform: translateY(0);
+    will-change: transform; /* Optimize performance */
+    transition: transform 0.1s linear; /* Smooth movement */
+}
+
+/* For the parallax background */
+.hero-section {
+    position: relative;
+    height: 100vh;
+    background-image: url('website_wallpaper.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Slogan */
+/* --------------------------------------------------------------------------- */
+
+/* Existing .slogan styles */
+.slogan {
+    position: relative;
+    font-family: 'sans-serif';
+    font-weight: normal;
+    text-align: center;
+    font-size: 1.15rem; /* Adjusted size if needed */
+    padding: 200px;
+    color: #000000;
+    background-color: rgba(248, 248, 248, 1);
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgb(255, 255, 255);
+    line-height: 1.6;
+
+    /* Fade-in animation initial state */
+    opacity: 1;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* Visible state for fade-in */
+.slogan.visible {
+    opacity: 1;          /* Fully visible */
+    transform: translateY(0); /* Reset the downward shift */
+}
+
+/* Product Description with Figma Screenshot */
+/* --------------------------------------------------------------------------- */
+
+/* Product Details Section */
+.product_details {
+    position: relative;
+    display: flex;
+    background-color: white;
+    gap: 20px;
+    flex-direction: column;
+    /* Adjust padding and margin as needed */
+    padding: 40px 40px;
+    margin-bottom: 15%;
+}
+
+.blue_letter h3 {
+    position: relative;
+    color: #0064FF; /* Or use a specific hex code for your desired blue color */
+    font-family: 'SF Pro Rounded Semibold';
+    font-weight: normal;
+    font-size: 1.6em; /* Adjust font size as needed */
+    margin-top: 14%;
+    margin-left: 13%;
+    margin-bottom: 4%;;
+    text-align: left;
+    text-indent: 2px;
+}
+
+.bold_letter h3 {
+    position: relative;
+    font-weight: normal;
+    font-family: 'SF Pro Display';
+    font-size: 2.0em; /* Adjust font size as needed */
+    text-align: left;
+    line-height: 0.9;
+    margin-left: 13%;
+    margin-top: 6px;
+    text-indent: 2px;
+}
+
+
+.figma_screenshot1 img {
+    position: relative;
+    /* width: 26%; /* Maintain the width */
+    max-width: 22%;
+    height: auto; /* Keep aspect ratio */
+    margin-left: 60%;
+    text-align: right;
+    margin-top: -110%; /* Move image further up */
+    transform: translate(14%, -35%);
+    background-color: transparent;
+    filter: drop-shadow(-20px 20px 20px rgba(0, 0, 0, 0.6));
+}
+
+
+/* Second Image Styling */
+.figma_screenshot2 img {
+    position: relative;
+    /* width: 26%; /* Take full column width */
+    max-width: 22%;
+    height: auto; /* Maintain aspect ratio */
+    text-align: left;
+    margin-right: auto;
+    margin-left: 15%;
+    margin-top: 8%;
+    transform: translate(-3%, 2%);
+    background-color: transparent;
+    filter: drop-shadow(-20px 20px 20px rgba(0, 0, 0, 0.4));
+}
+
+.small_letter h3 {
+    position: relative;
+    font-size: 1.5em; /* Adjust font size as needed */
+    color: #202632;
+    font-family: 'SF Pro Display';
+    text-align: left;
+    text-indent: 2px;
+    margin-right: auto;
+    margin-left: 60%;
+    margin-top: -6%;
+}
+
+
+/* Product Description with Notification */
+/* --------------------------------------------------------------------------- */
+
+/* Product Details Section */
+.notification {
+    display: flex;
+    background-color: rgba(248, 248, 248, 1);
+    gap: 20px;
+    flex-direction: column;
+    /* Adjust padding and margin as needed */
+    padding: 40px 40px;
+    margin-bottom: 15%;
+}
+
+.blue_notification h3 {
+    color: #0064FF; /* Or use a specific hex code for your desired blue color */
+    font-family: 'SF Pro Rounded Semibold';
+    font-weight: normal;
+    font-size: 1.6em; /* Adjust font size as needed */
+    margin-top: 14%;
+    margin-left: 13%;
+    margin-bottom: 1%;;
+    text-align: left;
+}
+
+.bold_notification h3 {
+    font-weight: normal;
+    font-family: 'SF Pro Display';
+    font-size: 2.0em; /* Adjust font size as needed */
+    text-align: left;
+    line-height: 0.5;
+    margin-left: 13%;
+    margin-top: 2%;
+}
+
+/* Transfer of Payment*/
+/* --------------------------------------------------------------------------- */
+
+.blue_transfer_of_payment h3 {
+    color: #0064FF; /* Or use a specific hex code for your desired blue color */
+    font-family: 'SF Pro Rounded Semibold';
+    font-weight: normal;
+    font-size: 1.4em; /* Adjust font size as needed */
+    margin-top: 6%;
+    margin-left: 16%;
+    margin-bottom: 0.5%;;
+    text-align: left;
+}
+
+.bold_transfer_of_payment h3 {
+    font-weight: normal;
+    font-family: 'SF Pro Display';
+    font-size: 1.7em; /* Adjust font size as needed */
+    text-align: left;
+    line-height: 0.8px;
+    margin-left: 16%;
+    margin-top: 2%;
+    margin-bottom: 1%;
+}
+
+.thin_transfer_of_payment h3 {
+    font-family: 'SF Pro Display';
+    color: #808080;
+    font-weight: lighter;
+    font-size: 1.4em; /* Adjust font size as needed */
+    text-align: left;
+    line-height: 0.5;
+    margin-left: 16%;
+    margin-top: 0.5%;
+}
+
+.transfer_notice img {
+    position: relative;
+    /* width: 26%; /* Maintain the width */
+    max-width: 22%;
+    height: auto; /* Keep aspect ratio */
+    margin-left: 55%;
+    text-align: right;
+    margin-top: -110%; /* Move image further up */
+    transform: translate(14%, -35%);
+    background-color: transparent;
+    filter: drop-shadow(-20px 20px 20px rgba(0, 0, 0, 0.6));
+}
+
+
+/* Unverified Notice*/
+/* --------------------------------------------------------------------------- */
+
+.blue_unverified_notice h3 {
+    color: #0064FF; /* Or use a specific hex code for your desired blue color */
+    font-family: 'SF Pro Rounded Semibold';
+    font-weight: normal;
+    font-size: 1.4em; /* Adjust font size as needed */
+    margin-top: 6%;
+    margin-left: 60%;
+    margin-bottom: 0.5%;;
+    text-align: left;
+}
+
+.bold_unverified_notice h3 {
+    font-weight: normal;
+    font-family: 'SF Pro Display';
+    font-size: 1.7em; /* Adjust font size as needed */
+    text-align: left;
+    line-height: 0.8px;
+    margin-left: 60%;
+    margin-top: 2%;
+    margin-bottom: 1%;
+}
+
+.thin_unverified_notice h3 {
+    font-family: 'SF Pro Display';
+    color: #808080;
+    font-weight: lighter;
+    font-size: 1.4em; /* Adjust font size as needed */
+    text-align: left;
+    line-height: 0.5;
+    margin-left: 60%;
+    margin-top: 0.5%;
+}
+
+.unverified_notice img {
+    position: relative;
+    /* width: 26%; /* Maintain the width */
+    max-width: 22%;
+    height: auto; /* Keep aspect ratio */
+    margin-left: 12%;
+    text-align: right;
+    margin-top: -110%; /* Move image further up */
+    transform: translate(14%, -35%);
+    background-color: transparent;
+    filter: drop-shadow(-20px 20px 20px rgba(0, 0, 0, 0.6));
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .product_details {
+        flex-direction: column; /* Stack columns vertically on small screens */
+    }
+
+    .left-column, .right-column {
+        flex: none; /* Remove equal width */
+        width: 100%; /* Full width for each column */
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .product_details {
+        flex-direction: column; /* Stack columns vertically on small screens */
+    }
+
+    .left-column, .right-column {
+        flex: none; /* Remove equal width */
+        width: 100%; /* Full width for each column */
+    }
+}
+
+
+/* Health Alerts*/
+/* --------------------------------------------------------------------------- */
+
+.blue_health_issue h3 {
+    color: #0064FF; /* Or use a specific hex code for your desired blue color */
+    font-family: 'SF Pro Rounded Semibold';
+    font-weight: normal;
+    font-size: 1.4em; /* Adjust font size as needed */
+    margin-top: 6%;
+    margin-left: 16%;
+    margin-bottom: 0.5%;;
+    text-align: left;
+}
+
+.bold_health_issue h3 {
+    font-weight: normal;
+    font-family: 'SF Pro Display';
+    font-size: 1.7em; /* Adjust font size as needed */
+    text-align: left;
+    line-height: 0.8px;
+    margin-left: 16%;
+    margin-top: 2%;
+    margin-bottom: 1%;
+}
+
+.thin_health_issue h3 {
+    font-family: 'SF Pro Display';
+    color: #808080;
+    font-weight: lighter;
+    font-size: 1.4em; /* Adjust font size as needed */
+    text-align: left;
+    line-height: 0.5;
+    margin-left: 16%;
+    margin-top: 0.5%;
+}
+
+.health_issue img {
+    position: relative;
+    /* width: 26%; /* Maintain the width */
+    max-width: 22%;
+    height: auto; /* Keep aspect ratio */
+    margin-left: 58%;
+    text-align: right;
+    margin-top: -130%; /* Move image further up */
+    transform: translate(14%, -35%);
+    background-color: transparent;
+    filter: drop-shadow(-20px 20px 20px rgba(0, 0, 0, 0.6));
+}
+
+
+/* Management */
+/* --------------------------------------------------------------------------- */
+.management {
+    display: flex;
+    background-color: white;
+    gap: 20px;
+    flex-direction: column;
+    /* Adjust padding and margin as needed */
+    padding: 40px 40px;
+    margin-bottom: 15%;
+}
+
+.blue_management h3 {
+    color: #0064FF; /* Or use a specific hex code for your desired blue color */
+    font-family: 'SF Pro Rounded Semibold';
+    font-weight: normal;
+    font-size: 1.6em; /* Adjust font size as needed */
+    margin-top: 4%;
+    margin-left: 13%;
+    margin-bottom: 2%;;
+    text-align: left;
+}
+
+.bold_management h3 {
+    font-weight: normal;
+    font-family: 'SF Pro Display';
+    font-size: 2.4em; /* Adjust font size as needed */
+    text-align: left;
+    line-height: 0.6;
+    margin-left: 13%;
+    margin-top: 4px;
+}
+
+.bold_management_1 h3 {
+    font-weight: normal;
+    color: rgb(87, 86, 86);
+    font-family: 'SF Pro Display';
+    font-size: 2.4em; /* Adjust font size as needed */
+    text-align: left;
+    line-height: 0.9;
+    margin-left: 13%;
+    margin-top: 12%;
+}
+
+.bold_management_2 h3 {
+    font-weight: normal;
+    color: gray;
+    font-family: 'SF Pro Display';
+    font-size: 2.4em; /* Adjust font size as needed */
+    text-align: left;
+    line-height: 0.9;
+    margin-left: 13%;
+    margin-top: -2%;
+}
+
+.bold_management_3 h3 {
+    font-weight: normal;
+    color: rgb(182, 182, 182);
+    font-family: 'SF Pro Display';
+    font-size: 2.4em; /* Adjust font size as needed */
+    text-align: left;
+    line-height: 0.9;
+    margin-left: 13%;
+    margin-top: -2%;
+}
+
+.thin_management h3 {
+    font-family: 'SF Pro Display';
+    color: #2d2d2d;
+    font-weight: bold;
+    font-size: 1.4em; /* Adjust font size as needed */
+    text-align: left;
+    line-height: 0.5;
+    margin-left: 13%;
+    margin-top: 0.5%;
+}
+
+.receive_text img {
+    position: relative;
+    /* width: 26%; /* Maintain the width */
+    height: auto; /* Keep aspect ratio */
+    margin-left: 58%;
+    text-align: right;
+    margin-top: -80%; /* Move image further up */
+    transform: translate(-8%, -15%);
+    background-color: transparent;
+    filter: drop-shadow(-20px 20px 20px rgba(0, 0, 0, 0.6));
+    max-width: 22%;
+}
+
+.texting img {
+    position: relative;
+    /* width: 26%; /* Maintain the width */
+    height: auto; /* Keep aspect ratio */
+    margin-left: 58%;
+    text-align: right;
+    margin-top: -80%; /* Move image further up */
+    transform: translate(30%, -15%);
+    background-color: transparent;
+    filter: drop-shadow(-20px 20px 20px rgba(0, 0, 0, 0.6));
+    max-width: 22%;
+}
+
+
+/* Centered-text-Section */
+/* --------------------------------------------------------------------------- */
+
+.centered-text-section {
+    position: relative;
+    background-image: url('vet_wallpaper.png'); /* Set the image as background */
+    background-size: cover; /* Ensure the image covers the entire section */
+    background-position: center; /* Center the background image */
+    height: 100vh; /* Set the height to cover the entire viewport */
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Center content vertically and horizontally */
+    margin-top: 260px; /* Add space on top */
+    margin-left: -8%;
+    margin-right: -8%;
+}
+
+
+.text_overwrite {
+    text-align: center; /* Center the text horizontally */
+    color: white; /* Set text color for better visibility */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.text_overwrite h1 {
+    font-family: 'SF Pro Display';
+    color: white;
+    font-size: 7em;
+    margin-bottom: 10px;
+}
+
+
+/* Company Information */
+/* --------------------------------------------------------------------------- */
+
+.company-info {
+    background-color: white;
+    font-family: 'SF Pro Display';
+    text-align: left;
+
+    width: 100%;
+    margin-left: -8%;
+    margin-right: -8%;
+
+    padding-left: 23%;
+    padding-right: 23%;
+    padding-top: 5%;
+    padding-bottom: 15%;
+}
+
+.company-info h2 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    color: #202632;
+}
+
+.company-info ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.company-info li {
+    font-size: 1em;
+    margin: 10px 0;
+    color: #202632;
+}
+
+.company-info a {
+    color: #0064FF;
+    text-decoration: none;
+}
+
+.company-info a:hover {
+    text-decoration: underline;
+}
+
+.company-info strong {
+    font-weight: bold;
+    color: #202632; 
+}
+
